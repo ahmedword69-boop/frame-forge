@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frame Forge</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="masthead">
+      <div class="mark"><span>FF</span><i></i></div>
+      <div><p class="kicker">LOCAL VIDEO WORKBENCH</p><h1>Frame Forge</h1></div>
+      <div class="header-note">MOTION<br>INTERPOLATION</div>
+    </header>
+
+    <section class="intro">
+      <p class="eyebrow">01 / INPUT</p>
+      <h2>Give motion<br><em>more room.</em></h2>
+      <p class="lede">Generate intermediate frames from your footage and export a smoother, higher-frame-rate master.</p>
+    </section>
+
+    <form id="forge-form" class="workspace">
+      <label id="drop-zone" class="drop-zone" for="video-input">
+        <input id="video-input" type="file" accept="video/*" required>
+        <span class="drop-icon">+</span>
+        <strong id="file-label">Drop a video here</strong>
+        <small>MP4, MOV, MKV · up to 2 GB</small>
+      </label>
+      <div class="controls">
+        <div><p class="eyebrow">02 / OUTPUT</p><h3>Target frame rate</h3></div>
+        <div class="fps-options" role="group" aria-label="Target frame rate">
+          <label><input type="radio" name="fps" value="60"><span>60</span></label>
+          <label><input type="radio" name="fps" value="90"><span>90</span></label>
+          <label><input type="radio" name="fps" value="120" checked><span>120</span></label>
+          <label><input type="radio" name="fps" value="144"><span>144</span></label>
+          <label><input type="radio" name="fps" value="240"><span>240</span></label>
+        </div>
+        <button type="submit" class="forge-button"><span>Forge frames</span><b>↗</b></button>
+      </div>
+    </form>
+
+    <section id="status-panel" class="status-panel" hidden>
+      <div class="status-top"><p class="eyebrow">03 / PROCESSING</p><span id="status-text">Preparing...</span></div>
+      <div class="progress-track"><div id="progress-bar"></div></div>
+      <p id="status-detail">Your original frames are being analyzed for motion.</p>
+      <a id="download-link" class="download-link" hidden>Download 120 FPS master <b>↓</b></a>
+    </section>
+    <footer><span>FRAME FORGE / 2026</span><span>RUNS LOCALLY ON YOUR MACHINE</span></footer>
+  </main>
+  <script src="/static/app.js"></script>
+</body>
+</html>
